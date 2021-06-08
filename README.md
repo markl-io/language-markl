@@ -1,2 +1,3 @@
-# language-markl
- Atom grammar for my documentation syntax.
+# language-markl package
+
+Atom language file for document formatting using dracula-ui theme.

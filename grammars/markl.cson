@@ -1,0 +1,66 @@
+scopeName: 'source.markl'
+name: 'markl'
+fileTypes: [
+  'txt'
+  'markl'
+]
+patterns: [
+  {
+    begin: '"'
+    end: '"'
+    name: 'markup.quote'
+    comment: 'Quotes'
+  }
+  {
+    match: '^\\w.*:.*$'
+    name: 'markup.bold'
+    comment: 'Headings'
+  }
+  {
+    match: '^\\d+ > .*'
+    name: 'markup.changed'
+    comment: 'Numbered step'
+  }
+  {
+    #match: '(^\\s+>> .*$|[^>>>]>> .*$)'
+    #match: '^>> .*$'
+    begin: '>> '
+    end: '\\n'
+    name: 'markup.inserted'
+    comment: 'Substep 2'
+    patterns: [
+        begin: '"'
+        end: '"'
+        name: 'markup.quote'
+        comment: 'Quotes'
+      ]
+  }
+  {
+    #match: '^>>> .*$'
+    begin: '>>> '
+    end: '\\n'
+    name: 'markup.italic'
+    comemnt: 'Substep 3'
+    patterns: [
+      begin: '"'
+      end: '"'
+      name: 'markup.quote'
+      comment: 'In-line quotes. Highlight yellow with italics.'
+    ]
+  }
+  {
+    match: '^> .*[^:]$'
+    name: 'support'
+    comemnt: 'General notes. Highlight cyan.'
+  }
+  {
+    match: '\\[.*\\]'
+    name: 'markup.raw.inline'
+    comment: 'In-line highlight. Highlight pink.'
+  }
+  {
+    match: '^!.*$'
+    name: 'markup.deleted'
+    comment: 'To-do section. Highlight red.'
+  }
+]
