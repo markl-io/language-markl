@@ -1,7 +1,7 @@
 {
   "name": "language-markl",
   "main": "./lib/language-markl",
-  "version": "0.0.0",
+  "version": "0.2.0",
   "description": "Atom language file for my brain syntax. For use with dracula-ui.",
   "keywords": [],
   "repository": "https://github.com/markl-io/language-markl",
@@ -9,6 +9,5 @@
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
